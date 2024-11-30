@@ -1,0 +1,53 @@
+.scrollWrapper {
+  width: 500px;
+  height: 500px;
+  border: 1px solid white;
+  overflow-y: scroll;
+}
+
+.scrollWrapper::-webkit-scrollbar {
+  display: none;
+}
+.page {
+  width: 500px;
+  height: 510px;
+}
+
+.page1 {
+  background-color: salmon;
+}
+.page2 {
+  background-color: salmon;
+}
+.page3 {
+  display: flex;
+  align-items: flex-start;
+  overflow-x: hidden;
+  white-space: nowrap;
+  align-items: center;
+  height: 500vh;
+  flex-direction: column;
+  position: relative;
+  p {
+    font-weight: 700;
+    font-size: 8rem;
+    color: #06060e;
+    color: #fbfbfb;
+    border: 1px solid red;
+  }
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+  }
+}
+.page3::-webkit-scrollbar {
+  display: none;
+}
+
+.page4 {
+  background-color: salmon;
+}
+.page5 {
+  background-color: salmon;
+}

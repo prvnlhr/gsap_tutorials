@@ -1,3 +1,79 @@
+import React, { useRef, useState } from "react";
+import styles from "./styles/tweening.module.css";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { Draggable } from "gsap/Draggable";
+
+const colors = ["salmon", "skyblue", "lightgreen"];
+
+const Tweening = () => {
+  const container = useRef();
+  const box = useRef();
+
+  // 1. Tween and stagger
+  // const { contextSafe } = useGSAP({ scope: container });
+  // const boxes = [useRef(), useRef(), useRef()];
+  // const triggerAnimation = contextSafe(() => {
+  //   gsap.to(
+  //     boxes.map((box) => box.current),
+  //     {
+  //       opacity: 1,
+  //       duration: 1,
+  //       stagger: 0.5,
+  //     }
+  //   );
+  // });
+
+  //2.  Dragging animation
+  // gsap.registerPlugin(Draggable);
+  // useGSAP(() => {
+  //   Draggable.create(box.current, {
+  //     bounds: container.current,
+  //   });
+  // });
+
+  return (
+    <div className={styles.container} ref={container}>
+      {/* <button onClick={triggerAnimation}>Animate</button> */}
+      {/* {boxes.map((box, i) => (
+        <div
+          className={styles.box}
+          style={{
+            backgroundColor: colors[i],
+            position: "relative",
+            opacity: 0.2,
+          }}
+          key={i}
+          ref={box}
+        ></div>
+      ))} */}
+      {/* <div className={styles.box} ref={box}></div> */}
+    </div>
+  );
+};
+
+export default Tweening;
+
+const pages = Array.from({ length: 5 });
+let boxRefs = useRef([]);
+// useGSAP(() => {
+//   boxRefs.current.forEach((box, i) => {
+//     gsap.to(box, {
+//       borderRadius: "100%",
+//       scale: 10,
+//       duration: 1.5,
+//       ease: "power1.inOut",
+//       scrollTrigger: {
+//         trigger: box,
+//         start: "top 80%",
+//         end: "top 30%",
+//         scrub: true,
+//       },
+//     });
+//   });
+// });
+
+
 import React, { useRef, useEffect } from "react";
 import styles from "./styles/tweening.module.css";
 import gsap from "gsap";
